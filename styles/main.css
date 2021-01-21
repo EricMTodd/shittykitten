@@ -1,0 +1,9 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#shitty-kitten-logo {
+  max-width: 420px;
+  max-height: 344px;
+}
