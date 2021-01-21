@@ -4,6 +4,6 @@ body {
 }
 
 #shitty-kitten-logo {
-  max-width: 420px;
-  max-height: 344px;
+  max-width: 420px; /* Default Size is 840px */
+  max-height: 344px; /* Default size is 687px */
 }
