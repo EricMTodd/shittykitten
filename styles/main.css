@@ -1,9 +1,26 @@
-body {
-  display: flex;
-  justify-content: center;
+/* GLOBAL STYLES */
+
+* {
+  box-sizing: border-box;
 }
 
-#ShittyKitten-Logo-Transparency {
+body {
+  text-align: center;
+  font-family: "Fira Sans", sans-serif;
+  margin: 0 auto;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+#shittykitten-logo-transparency {
+  display: block;
+  margin: 0 auto;
   max-width: 420px; /* Default Size is 840px */
   max-height: 344px; /* Default size is 687px */
+}
+
+.navigation li {
+  display: inline;
 }
