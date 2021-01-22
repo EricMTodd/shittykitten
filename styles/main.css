@@ -24,3 +24,7 @@ a {
 .navigation li {
   display: inline;
 }
+
+.navigation a {
+  padding: 0 6px 0 6px;
+}
