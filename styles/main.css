@@ -1,5 +1,4 @@
 /* GLOBAL STYLES */
-
 * {
   box-sizing: border-box;
 }
@@ -15,24 +14,17 @@ a {
   text-decoration: none;
 }
 
-img {
-  max-width: 15%;
-  max-height: 15%;
-  margin: 0 auto;
-  padding: 6px;
-}
-
-#shittykitten-logo-transparency {
-  display: block;
-  margin: 0 auto;
-  max-width: 420px; /* Default Size is 840px */
-  max-height: 344px; /* Default size is 687px */
-}
-
-.navigation li {
+nav li {
+  list-style: none;
   display: inline;
+  padding: 6px 12px;
 }
 
-.navigation a {
-  padding: 0 6px 0 6px;
+header {
+  width: 1000px;
+  height: 670px;
+  background: url(../images/markham-self-portrait.png);
+}
+
+@media (max-width: 500px) {
 }
