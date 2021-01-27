@@ -27,7 +27,7 @@ main {
 }
 
 #shitty-kitten-logo {
-  /* float: left; */
+  float: left;
   max-width: 200px;
   padding-left: 24px;
 }
