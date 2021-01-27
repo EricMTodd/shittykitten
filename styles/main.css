@@ -17,13 +17,19 @@ a {
 nav li {
   list-style: none;
   display: inline;
-  padding: 6px 12px;
+  padding: 0px 50px;
 }
 
-header {
-  width: 1000px;
-  height: 670px;
-  background: url(../images/markham-self-portrait.png);
+main {
+  padding-top: 20px;
+  padding-bottom: 15px;
+  background-color: black;
+}
+
+#shitty-kitten-logo {
+  /* float: left; */
+  max-width: 200px;
+  padding-left: 24px;
 }
 
 @media (max-width: 500px) {
