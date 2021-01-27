@@ -7,6 +7,6 @@ for (let ext in files) {
     let img = new Image();
     img.src = src;
     
-    document.getElementById("gallery-test").appendChild(img);
+    document.getElementById("image-gallery").appendChild(img);
   }
 }
