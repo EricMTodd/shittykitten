@@ -36,5 +36,9 @@ main {
   padding: 6px;
 }
 
+#bio {
+  color: white;
+}
+
 @media (max-width: 500px) {
 }
