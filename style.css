@@ -1,0 +1,19 @@
+* {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 25px;
+}
+header {
+	height: 10vh;
+	background-color: red;
+}
+
+main {
+	height: 85vh;
+	background-color: yellow;
+}
+
+footer {
+	height: 5vh;
+	background-color: blue;
+}
