@@ -25,11 +25,17 @@ main {
 	background-color: black;
 	margin: 0 auto;
 	height: 80vh;
+	overflow: scroll;
 }
 
 main img {
 	height: 70vh;
+	width: 70vw;
 	margin: 0 30px 0 30px;
+}
+
+main button {
+	width: 15vw;
 }
 
 footer {
