@@ -4,20 +4,31 @@
 	font-family: arial;
 	font-size: 25px;
 	color: white;
-	background-color: black;
 }
+
 header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 10vh;
+	background-color: white;
+	height: 15vh;
+}
+
+header img {
+	height: 12vh;
 }
 
 main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 85vh;
+	background-color: black;
+	margin: 0 auto;
+	height: 80vh;
+}
+
+main img {
+	height: 70vh;
 }
 
 footer {
@@ -25,6 +36,7 @@ footer {
 	justify-content: center;
 	align-items: center;
 	height: 5vh;
+	background-color: black;
 	color: white;
 }
 
