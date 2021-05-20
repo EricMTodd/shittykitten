@@ -3,6 +3,13 @@ import { galleryControllers } from '../controllers/galleryControllers';
 const galleryViews = (() => {
 	let main = document.querySelector('main');
 
+	const renderPreviousImage = (() => {
+		let image = document.createElement('img');
+		image.id = 'previous-image';
+		image.src = galleryControllers.sourceList[galleryControllers.previousIndex];
+		main.appendChild(image);
+	})();
+
 	const renderPreviousButton = (() => {
 		let button = document.createElement('button');
 		button.className = 'gallery-controller-button';
@@ -30,6 +37,13 @@ const galleryViews = (() => {
 			galleryControllers.nextImage();
 		});
 		main.appendChild(button);
+	})();
+
+	const renderNextImage = (() => {
+		let image = document.createElement('img');
+		image.id = 'next-image';
+		image.src = galleryControllers.sourceList[galleryControllers.nextIndex];
+		main.appendChild(image);
 	})();
 	return {};
 })();

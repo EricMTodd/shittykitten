@@ -4,7 +4,7 @@ const galleryControllers = (() => {
 	let currentIndex = 0;
 	let nextIndex = 1;
 
-	const loopOverGallery = (() => {
+	const createImageSourceList = (() => {
 		for (let i = 0; i < 35; i++) {
 			let source = `../dist/images/gallery/markham-maes-art-${i + 1}.png`;
 			sourceList.push(source);
@@ -28,8 +28,12 @@ const galleryControllers = (() => {
 	};
 
 	return {
+		sourceList,
 		nextImage,
 		previousImage,
+		previousIndex,
+		currentIndex,
+		nextIndex,
 	};
 })();
 
