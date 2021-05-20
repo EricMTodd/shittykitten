@@ -4,8 +4,11 @@ const galleryControllers = (() => {
 	let galleryIndex = 0;
 
 	const previousImage = () => {
+		if (galleryIndex === 0) {
+			galleryIndex = 35;
+		}
 		galleryIndex--;
-		console.log(sourceList[galleryIndex]);
+		document.querySelector('#current-image').src = sourceList[galleryIndex];
 	};
 
 	const loopOverGallery = (() => {
@@ -13,13 +16,16 @@ const galleryControllers = (() => {
 			let source = `../dist/images/gallery/markham-maes-art-${i + 1}.png`;
 			sourceList.push(source);
 		}
-		console.log(sourceList[galleryIndex]);
 	})();
 
 	const nextImage = () => {
+		if (galleryIndex === 34) {
+			galleryIndex = -1;
+		}
 		galleryIndex++;
-		console.log(sourceList[galleryIndex]);
+		document.querySelector('#current-image').src = sourceList[galleryIndex];
 	};
+
 	return {
 		nextImage,
 		previousImage,

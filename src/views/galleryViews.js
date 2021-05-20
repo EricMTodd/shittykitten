@@ -24,7 +24,7 @@ const galleryViews = (() => {
 	const renderNextButton = (() => {
 		let button = document.createElement('button');
 		button.className = 'gallery-controller-button';
-		button.id = 'previous-button';
+		button.id = 'next-button';
 		button.innerText = '>';
 		button.addEventListener('click', (e) => {
 			galleryControllers.nextImage();
