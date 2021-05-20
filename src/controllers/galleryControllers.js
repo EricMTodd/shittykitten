@@ -1,15 +1,8 @@
 const galleryControllers = (() => {
-	let main = document.querySelector('main');
 	let sourceList = [];
-	let galleryIndex = 0;
-
-	const previousImage = () => {
-		if (galleryIndex === 0) {
-			galleryIndex = 35;
-		}
-		galleryIndex--;
-		document.querySelector('#current-image').src = sourceList[galleryIndex];
-	};
+	let previousIndex = 34;
+	let currentIndex = 0;
+	let nextIndex = 1;
 
 	const loopOverGallery = (() => {
 		for (let i = 0; i < 35; i++) {
@@ -18,12 +11,20 @@ const galleryControllers = (() => {
 		}
 	})();
 
-	const nextImage = () => {
-		if (galleryIndex === 34) {
-			galleryIndex = -1;
+	const previousImage = () => {
+		if (currentIndex === 0) {
+			currentIndex = 35;
 		}
-		galleryIndex++;
-		document.querySelector('#current-image').src = sourceList[galleryIndex];
+		currentIndex--;
+		document.querySelector('#current-image').src = sourceList[currentIndex];
+	};
+
+	const nextImage = () => {
+		if (currentIndex === 34) {
+			currentIndex = -1;
+		}
+		currentIndex++;
+		document.querySelector('#current-image').src = sourceList[currentIndex];
 	};
 
 	return {
