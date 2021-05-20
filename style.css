@@ -25,7 +25,7 @@ main {
 	background-color: black;
 	margin: 0 auto;
 	height: 80vh;
-	overflow: scroll;
+	overflow: scroll, hidden;
 }
 
 main img {
@@ -55,6 +55,14 @@ footer a {
 
 footer a:hover {
 	text-decoration: underline;
+}
+
+#previous-button {
+	margin-right: auto;
+}
+
+#next-button {
+	margin-left: auto;
 }
 
 .gallery-controller-button {
