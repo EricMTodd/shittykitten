@@ -1,8 +1,5 @@
 const galleryControllers = (() => {
 	let sourceList = [];
-	let previousIndex = 34;
-	let currentIndex = 0;
-	let nextIndex = 1;
 
 	const createImageSourceList = (() => {
 		for (let i = 0; i < 35; i++) {
@@ -11,15 +8,19 @@ const galleryControllers = (() => {
 		}
 	})();
 
+	let previousIndex = sourceList.length - 1;
+	let currentIndex = 0;
+	let nextIndex = 1;
+
 	const previousImage = () => {
 		if (previousIndex === 0) {
-			previousIndex = 35;
+			previousIndex = sourceList.length;
 		}
 		if (currentIndex === 0) {
-			currentIndex = 35;
+			currentIndex = sourceList.length;
 		}
 		if (nextIndex === 0) {
-			nextIndex = 35;
+			nextIndex = sourceList.length;
 		}
 		previousIndex--;
 		currentIndex--;
@@ -30,13 +31,13 @@ const galleryControllers = (() => {
 	};
 
 	const nextImage = () => {
-		if (previousIndex === 34) {
+		if (previousIndex === sourceList.length - 1) {
 			previousIndex = -1;
 		}
-		if (currentIndex === 34) {
+		if (currentIndex === sourceList.length - 1) {
 			currentIndex = -1;
 		}
-		if (nextIndex === 34) {
+		if (nextIndex === sourceList.length - 1) {
 			nextIndex = -1;
 		}
 		previousIndex++;
