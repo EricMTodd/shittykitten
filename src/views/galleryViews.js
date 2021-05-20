@@ -1,3 +1,5 @@
+import { galleryControllers } from '../controllers/galleryControllers';
+
 const galleryViews = (() => {
 	let main = document.querySelector('main');
 
@@ -7,13 +9,14 @@ const galleryViews = (() => {
 		button.id = 'previous-button';
 		button.innerText = '<';
 		button.addEventListener('click', (e) => {
-			console.log('click');
+			galleryControllers.previousImage();
 		});
 		main.appendChild(button);
 	})();
 
 	const renderPortrait = (() => {
 		let image = document.createElement('img');
+		image.id = 'current-image';
 		image.src = '../dist/images/markham-self-portrait.png';
 		main.appendChild(image);
 	})();
@@ -24,7 +27,7 @@ const galleryViews = (() => {
 		button.id = 'previous-button';
 		button.innerText = '>';
 		button.addEventListener('click', (e) => {
-			console.log('click');
+			galleryControllers.nextImage();
 		});
 		main.appendChild(button);
 	})();
