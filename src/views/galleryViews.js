@@ -3,11 +3,21 @@ import { galleryControllers } from '../controllers/galleryControllers';
 const galleryViews = (() => {
 	let main = document.querySelector('main');
 
-	const renderPreviousImage = (() => {
-		let image = document.createElement('img');
-		image.id = 'previous-image';
-		image.src = galleryControllers.sourceList[galleryControllers.previousIndex];
-		main.appendChild(image);
+	const renderImageContainers = (() => {
+		const renderPreviousImageContainer = (() => {
+			let div = document.createElement('div');
+			div.className = 'image-container';
+			div.id = 'previous-image-container';
+
+			const renderPreviousImage = (() => {
+				let image = document.createElement('img');
+				image.id = 'previous-image';
+				image.src =
+					galleryControllers.sourceList[galleryControllers.previousIndex];
+				div.appendChild(image);
+			})();
+			main.appendChild(div);
+		})();
 	})();
 
 	const renderPreviousButton = (() => {
@@ -21,11 +31,18 @@ const galleryViews = (() => {
 		main.appendChild(button);
 	})();
 
-	const renderPortrait = (() => {
-		let image = document.createElement('img');
-		image.id = 'current-image';
-		image.src = '../dist/images/markham-self-portrait.png';
-		main.appendChild(image);
+	const renderCurrentImageContainer = (() => {
+		let div = document.createElement('div');
+		div.className = 'image-container';
+		div.id = 'current-image-container';
+
+		const renderPortrait = (() => {
+			let image = document.createElement('img');
+			image.id = 'current-image';
+			image.src = '../dist/images/markham-self-portrait.png';
+			div.appendChild(image);
+		})();
+		main.appendChild(div);
 	})();
 
 	const renderNextButton = (() => {
@@ -39,12 +56,20 @@ const galleryViews = (() => {
 		main.appendChild(button);
 	})();
 
-	const renderNextImage = (() => {
-		let image = document.createElement('img');
-		image.id = 'next-image';
-		image.src = galleryControllers.sourceList[galleryControllers.nextIndex];
-		main.appendChild(image);
+	const renderNextImageContainer = (() => {
+		let div = document.createElement('div');
+		div.className = 'image-container';
+		div.id = 'next-image-container';
+
+		const renderNextImage = (() => {
+			let image = document.createElement('img');
+			image.id = 'next-image';
+			image.src = galleryControllers.sourceList[galleryControllers.nextIndex];
+			div.appendChild(image);
+		})();
+		main.appendChild(div);
 	})();
+
 	return {};
 })();
 

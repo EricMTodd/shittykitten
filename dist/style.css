@@ -30,7 +30,6 @@ main {
 
 main img {
 	height: 70vh;
-	margin: 0 30px 0 30px;
 }
 
 main button {
@@ -56,21 +55,14 @@ footer a:hover {
 	text-decoration: underline;
 }
 
-#previous-button {
-	margin-right: auto;
-}
-
-#next-button {
-	margin-left: auto;
-}
-
 .gallery-controller-button {
 	font-size: 100px;
 	background-color: black;
 	border: none;
 	opacity: 0.3;
-	width: 150px;
+	width: 100px;
 	padding: 5px;
+	margin: auto;
 }
 
 .gallery-controller-button:hover {
@@ -87,6 +79,6 @@ footer a:hover {
 	padding: 0;
 }
 
-#current-image {
-	width: 700px;
+.image-container {
+	min-width: 720px;
 }
