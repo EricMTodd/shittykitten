@@ -12,19 +12,39 @@ const galleryControllers = (() => {
 	})();
 
 	const previousImage = () => {
+		if (previousIndex === 0) {
+			previousIndex = 35;
+		}
 		if (currentIndex === 0) {
 			currentIndex = 35;
 		}
+		if (nextIndex === 0) {
+			nextIndex = 35;
+		}
+		previousIndex--;
 		currentIndex--;
+		nextIndex--;
+		document.querySelector('#previous-image').src = sourceList[previousIndex];
 		document.querySelector('#current-image').src = sourceList[currentIndex];
+		document.querySelector('#next-image').src = sourceList[nextIndex];
 	};
 
 	const nextImage = () => {
+		if (previousIndex === 34) {
+			previousIndex = -1;
+		}
 		if (currentIndex === 34) {
 			currentIndex = -1;
 		}
+		if (nextIndex === 34) {
+			nextIndex = -1;
+		}
+		previousIndex++;
 		currentIndex++;
+		nextIndex++;
+		document.querySelector('#previous-image').src = sourceList[previousIndex];
 		document.querySelector('#current-image').src = sourceList[currentIndex];
+		document.querySelector('#next-image').src = sourceList[nextIndex];
 	};
 
 	return {

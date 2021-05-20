@@ -86,3 +86,7 @@ footer a:hover {
 	width: 100px;
 	padding: 0;
 }
+
+#current-image {
+	width: 700px;
+}
