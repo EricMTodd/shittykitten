@@ -2,6 +2,9 @@ import { galleryControllers } from '../controllers/galleryControllers';
 
 const galleryViews = (() => {
 	let main = document.querySelector('main');
+	let galleryContainer = document.createElement('div');
+	galleryContainer.id = 'gallery-container';
+	main.appendChild(galleryContainer);
 
 	const renderImageContainers = (() => {
 		const renderPreviousImageContainer = (() => {
@@ -16,7 +19,7 @@ const galleryViews = (() => {
 					galleryControllers.sourceList[galleryControllers.previousIndex];
 				div.appendChild(image);
 			})();
-			main.appendChild(div);
+			galleryContainer.appendChild(div);
 		})();
 	})();
 
@@ -28,7 +31,7 @@ const galleryViews = (() => {
 		button.addEventListener('click', (e) => {
 			galleryControllers.previousImage();
 		});
-		main.appendChild(button);
+		galleryContainer.appendChild(button);
 	})();
 
 	const renderCurrentImageContainer = (() => {
@@ -42,7 +45,7 @@ const galleryViews = (() => {
 			image.src = '../dist/images/markham-self-portrait.png';
 			div.appendChild(image);
 		})();
-		main.appendChild(div);
+		galleryContainer.appendChild(div);
 	})();
 
 	const renderNextButton = (() => {
@@ -53,7 +56,7 @@ const galleryViews = (() => {
 		button.addEventListener('click', (e) => {
 			galleryControllers.nextImage();
 		});
-		main.appendChild(button);
+		galleryContainer.appendChild(button);
 	})();
 
 	const renderNextImageContainer = (() => {
@@ -67,7 +70,7 @@ const galleryViews = (() => {
 			image.src = galleryControllers.sourceList[galleryControllers.nextIndex];
 			div.appendChild(image);
 		})();
-		main.appendChild(div);
+		galleryContainer.appendChild(div);
 	})();
 
 	return {};

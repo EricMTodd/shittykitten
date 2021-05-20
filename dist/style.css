@@ -18,7 +18,7 @@ header img {
 	height: 12vh;
 }
 
-main {
+#gallery-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -28,11 +28,11 @@ main {
 	overflow: hidden;
 }
 
-main img {
+#gallery-container img {
 	height: 70vh;
 }
 
-main button {
+#gallery-container button {
 	width: 15vw;
 }
 
