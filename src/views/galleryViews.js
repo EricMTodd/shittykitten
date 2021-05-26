@@ -31,7 +31,14 @@ const galleryViews = (() => {
 	})();
 
 	const renderButtons = (() => {
-		// render buttons
+		let buttonsContainer = document.querySelector('#buttons-container');
+		const renderReverseButton = (() => {
+			let button = document.createElement('button');
+			button.classList.add('slider-controller');
+			button.id = 'reverse-slider-button';
+			button.innerText = '<-';
+			buttonsContainer.appendChild(button);
+		})();
 	})();
 
 	return {};
