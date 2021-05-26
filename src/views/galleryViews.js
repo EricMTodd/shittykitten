@@ -1,76 +1,37 @@
 import { galleryControllers } from '../controllers/galleryControllers';
 
 const galleryViews = (() => {
-	let main = document.querySelector('main');
-	let galleryContainer = document.createElement('div');
-	galleryContainer.id = 'gallery-container';
-	main.appendChild(galleryContainer);
+	let gallery = document.querySelector('#gallery');
 
-	const renderImageContainers = (() => {
-		const renderPreviousImageContainer = (() => {
+	const renderSlider = (() => {
+		let div = document.createElement('div');
+		div.classList.add('container');
+		div.id = 'slider';
+		gallery.appendChild(div);
+	})();
+
+	const renderSlides = (() => {
+		let slider = document.querySelector('#slider');
+		for (let i = 0; i < 5; i++) {
+			let id = i + 1;
 			let div = document.createElement('div');
-			div.className = 'image-container';
-			div.id = 'previous-image-container';
-
-			const renderPreviousImage = (() => {
-				let image = document.createElement('img');
-				image.id = 'previous-image';
-				image.src =
-					galleryControllers.sourceList[galleryControllers.previousIndex];
-				div.appendChild(image);
-			})();
-			galleryContainer.appendChild(div);
-		})();
+			div.classList.add('slide');
+			div.id = `slide-${id}`;
+			div.dataset.id = `${id}`;
+			div.innerText = id;
+			slider.appendChild(div);
+		}
 	})();
 
-	const renderPreviousButton = (() => {
-		let button = document.createElement('button');
-		button.className = 'gallery-controller-button';
-		button.id = 'previous-button';
-		button.innerText = '<';
-		button.addEventListener('click', (e) => {
-			galleryControllers.previousImage();
-		});
-		galleryContainer.appendChild(button);
-	})();
-
-	const renderCurrentImageContainer = (() => {
+	const renderButtonsContainer = (() => {
 		let div = document.createElement('div');
-		div.className = 'image-container';
-		div.id = 'current-image-container';
-
-		const renderPortrait = (() => {
-			let image = document.createElement('img');
-			image.id = 'current-image';
-			image.src = '../dist/images/markham-self-portrait.png';
-			div.appendChild(image);
-		})();
-		galleryContainer.appendChild(div);
+		div.classList.add('container');
+		div.id = 'buttons-container';
+		gallery.appendChild(div);
 	})();
 
-	const renderNextButton = (() => {
-		let button = document.createElement('button');
-		button.className = 'gallery-controller-button';
-		button.id = 'next-button';
-		button.innerText = '>';
-		button.addEventListener('click', (e) => {
-			galleryControllers.nextImage();
-		});
-		galleryContainer.appendChild(button);
-	})();
-
-	const renderNextImageContainer = (() => {
-		let div = document.createElement('div');
-		div.className = 'image-container';
-		div.id = 'next-image-container';
-
-		const renderNextImage = (() => {
-			let image = document.createElement('img');
-			image.id = 'next-image';
-			image.src = galleryControllers.sourceList[galleryControllers.nextIndex];
-			div.appendChild(image);
-		})();
-		galleryContainer.appendChild(div);
+	const renderButtons = (() => {
+		// render buttons
 	})();
 
 	return {};
