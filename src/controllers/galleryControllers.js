@@ -28,12 +28,12 @@ const galleryControllers = (() => {
 		let next = document.querySelector('#next');
 		let onDeck = document.querySelector('#on-deck');
 		let slider = document.querySelector('#slider');
-		let squares = document.querySelectorAll('.slide');
+		let slides = document.querySelectorAll('.slide');
 
 		prohibitAbuse();
 
-		for (let i = 0; i < squares.length; i++) {
-			squares[i].classList.add('reverse');
+		for (let i = 0; i < slides.length; i++) {
+			slides[i].classList.add('reverse');
 		}
 
 		setTimeout(() => {
@@ -45,13 +45,11 @@ const galleryControllers = (() => {
 			if (div.dataset.id == 0) {
 				div.dataset.id = 35;
 			}
-			// div.innerText = div.dataset.id;
 			img.src = imageSources[div.dataset.id - 1];
-			// console.log(imageSources[div.dataset.id]);
 			div.appendChild(img);
 			slider.insertBefore(div, slider.firstChild);
-			for (let i = 0; i < squares.length; i++) {
-				squares[i].classList.remove('reverse');
+			for (let i = 0; i < slides.length; i++) {
+				slides[i].classList.remove('reverse');
 			}
 
 			div.id = 'in-the-hole';
@@ -69,12 +67,12 @@ const galleryControllers = (() => {
 		let next = document.querySelector('#next');
 		let onDeck = document.querySelector('#on-deck');
 		let slider = document.querySelector('#slider');
-		let squares = document.querySelectorAll('.slide');
+		let slides = document.querySelectorAll('.slide');
 
 		prohibitAbuse();
 
-		for (let i = 0; i < squares.length; i++) {
-			squares[i].classList.add('advance');
+		for (let i = 0; i < slides.length; i++) {
+			slides[i].classList.add('advance');
 		}
 
 		setTimeout(() => {
@@ -87,12 +85,10 @@ const galleryControllers = (() => {
 				div.dataset.id = 1;
 			}
 			img.src = imageSources[div.dataset.id - 1];
-			// div.innerText = div.dataset.id;
 			div.appendChild(img);
-			// console.log(imageSources[div.dataset.id]);
 			slider.appendChild(div);
-			for (let i = 0; i < squares.length; i++) {
-				squares[i].classList.remove('advance');
+			for (let i = 0; i < slides.length; i++) {
+				slides[i].classList.remove('advance');
 			}
 
 			div.id = 'on-deck';
