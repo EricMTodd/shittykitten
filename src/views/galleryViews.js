@@ -22,6 +22,7 @@ const galleryViews = (() => {
 			let div = renderSlide();
 			div.dataset.id = `${i + 1}`;
 			div.innerText = i + 1;
+			console.log(galleryControllers.imageSources[div.dataset.id]);
 
 			if (i === 0) {
 				div.id = 'in-the-hole';
