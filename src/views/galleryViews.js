@@ -11,15 +11,33 @@ const galleryViews = (() => {
 		gallery.appendChild(div);
 	})();
 
+	const renderSlide = () => {
+		let div = document.createElement('div');
+		div.classList.add('slide');
+		return div;
+	};
+
 	const renderSlides = (() => {
-		let slider = document.querySelector('#slider');
 		for (let i = 0; i < 5; i++) {
-			let id = i + 1;
-			let div = document.createElement('div');
-			div.classList.add('slide');
-			div.id = `slide-${id}`;
-			div.dataset.id = `${id}`;
-			div.innerText = id;
+			let div = renderSlide();
+			div.dataset.id = `${i + 1}`;
+			div.innerText = i + 1;
+
+			if (i === 0) {
+				div.id = 'in-the-hole';
+			}
+			if (i === 1) {
+				div.id = 'previous';
+			}
+			if (i === 2) {
+				div.id = 'current';
+			}
+			if (i === 3) {
+				div.id = 'next';
+			}
+			if (i === 4) {
+				div.id = 'on-deck';
+			}
 			slider.appendChild(div);
 		}
 	})();
@@ -41,6 +59,7 @@ const galleryViews = (() => {
 			button.type = 'button';
 			button.innerText = '<';
 			button.classList.add('slider-controller');
+			button.id = 'reverse-slide-button';
 			button.addEventListener('click', (e) => {
 				galleryControllers.reverseSlide();
 			});
@@ -52,6 +71,7 @@ const galleryViews = (() => {
 			button.type = 'button';
 			button.innerText = '>';
 			button.classList.add('slider-controller');
+			button.id = 'advance-slide-button';
 			button.addEventListener('click', (e) => {
 				galleryControllers.advanceSlide();
 			});
@@ -59,7 +79,9 @@ const galleryViews = (() => {
 		})();
 	})();
 
-	return {};
+	return {
+		renderSlide,
+	};
 })();
 
 export { galleryViews };
