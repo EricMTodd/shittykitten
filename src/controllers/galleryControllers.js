@@ -40,13 +40,15 @@ const galleryControllers = (() => {
 			onDeck.remove();
 
 			let div = galleryViews.renderSlide();
+			let img = document.createElement('img');
 			div.dataset.id = Number(inTheHole.dataset.id) - 1;
 			if (div.dataset.id == 0) {
 				div.dataset.id = 35;
 			}
-			div.innerText = div.dataset.id;
-
-			console.log(imageSources[div.dataset.id]);
+			// div.innerText = div.dataset.id;
+			img.src = imageSources[div.dataset.id - 1];
+			// console.log(imageSources[div.dataset.id]);
+			div.appendChild(img);
 			slider.insertBefore(div, slider.firstChild);
 			for (let i = 0; i < squares.length; i++) {
 				squares[i].classList.remove('reverse');
@@ -79,12 +81,15 @@ const galleryControllers = (() => {
 			inTheHole.remove();
 
 			let div = galleryViews.renderSlide();
+			let img = document.createElement('img');
 			div.dataset.id = Number(onDeck.dataset.id) + 1;
 			if (div.dataset.id == 36) {
 				div.dataset.id = 1;
 			}
-			div.innerText = div.dataset.id;
-			console.log(imageSources[div.dataset.id]);
+			img.src = imageSources[div.dataset.id - 1];
+			// div.innerText = div.dataset.id;
+			div.appendChild(img);
+			// console.log(imageSources[div.dataset.id]);
 			slider.appendChild(div);
 			for (let i = 0; i < squares.length; i++) {
 				squares[i].classList.remove('advance');

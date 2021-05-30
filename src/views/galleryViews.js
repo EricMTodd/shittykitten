@@ -20,9 +20,11 @@ const galleryViews = (() => {
 	const renderSlides = (() => {
 		for (let i = 0; i < 5; i++) {
 			let div = renderSlide();
+			let img = document.createElement('img');
+			img.src = galleryControllers.imageSources[i];
+			div.append(img);
+
 			div.dataset.id = `${i + 1}`;
-			div.innerText = i + 1;
-			console.log(galleryControllers.imageSources[div.dataset.id]);
 
 			if (i === 0) {
 				div.id = 'in-the-hole';
