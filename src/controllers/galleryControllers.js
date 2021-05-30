@@ -19,6 +19,7 @@ const galleryControllers = (() => {
 	return {
 		imageSources,
 		reverseSlide,
+		advanceSlide,
 	};
 })();
 
