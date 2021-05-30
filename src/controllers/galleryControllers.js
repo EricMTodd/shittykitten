@@ -1,6 +1,7 @@
 import { galleryViews } from '../views/galleryViews';
 
 const galleryControllers = (() => {
+	let slider = document.querySelector('#slider');
 	let imageSources = [];
 
 	const createImageSourceList = (() => {
@@ -10,54 +11,87 @@ const galleryControllers = (() => {
 		}
 	})();
 
-	const reverseSlide = () => {
-		let slider = document.querySelector('#slider');
+	const prohibitAbuse = () => {
+		let buttons = document.querySelectorAll('.slider-controller');
+		for (let i = 0; i < buttons.length; i++) {
+			buttons[i].disabled = true;
+			setTimeout(() => {
+				buttons[i].disabled = false;
+			}, 1000);
+		}
+	};
 
+	const reverseSlide = () => {
 		let inTheHole = document.querySelector('#in-the-hole');
 		let previous = document.querySelector('#previous');
 		let current = document.querySelector('#current');
 		let next = document.querySelector('#next');
 		let onDeck = document.querySelector('#on-deck');
+		let slider = document.querySelector('#slider');
+		let squares = document.querySelectorAll('.slide');
 
-		onDeck.remove();
+		prohibitAbuse();
 
-		let div = galleryViews.renderSlide();
-		div.dataset.id = Number(inTheHole.dataset.id) - 1;
-		div.innerText = div.dataset.id;
-		slider.insertBefore(div, inTheHole);
+		for (let i = 0; i < squares.length; i++) {
+			squares[i].classList.add('reverse');
+		}
 
-		div.id = 'in-the-hole';
-		next.id = 'on-deck';
-		current.id = 'next';
-		previous.id = 'current';
-		inTheHole.id = 'previous';
+		setTimeout(() => {
+			onDeck.remove();
+
+			let div = galleryViews.renderSlide();
+			div.dataset.id = Number(inTheHole.dataset.id) - 1;
+			div.innerText = div.dataset.id;
+			slider.insertBefore(div, slider.firstChild);
+			for (let i = 0; i < squares.length; i++) {
+				squares[i].classList.remove('reverse');
+			}
+
+			div.id = 'in-the-hole';
+			next.id = 'on-deck';
+			current.id = 'next';
+			previous.id = 'current';
+			inTheHole.id = 'previous';
+		}, 1000);
 	};
 
 	const advanceSlide = () => {
-		let slider = document.querySelector('#slider');
-
 		let inTheHole = document.querySelector('#in-the-hole');
 		let previous = document.querySelector('#previous');
 		let current = document.querySelector('#current');
 		let next = document.querySelector('#next');
 		let onDeck = document.querySelector('#on-deck');
+		let slider = document.querySelector('#slider');
+		let squares = document.querySelectorAll('.slide');
 
-		inTheHole.remove();
+		prohibitAbuse();
 
-		let div = galleryViews.renderSlide();
-		div.dataset.id = Number(onDeck.dataset.id) + 1;
-		div.innerText = div.dataset.id;
-		slider.appendChild(div);
+		for (let i = 0; i < squares.length; i++) {
+			squares[i].classList.add('advance');
+		}
 
-		div.id = 'on-deck';
-		previous.id = 'in-the-hole';
-		current.id = 'previous';
-		next.id = 'current';
-		onDeck.id = 'next';
+		setTimeout(() => {
+			inTheHole.remove();
+
+			let div = galleryViews.renderSlide();
+			div.dataset.id = Number(onDeck.dataset.id) + 1;
+			div.innerText = div.dataset.id;
+			slider.appendChild(div);
+			for (let i = 0; i < squares.length; i++) {
+				squares[i].classList.remove('advance');
+			}
+
+			div.id = 'on-deck';
+			previous.id = 'in-the-hole';
+			current.id = 'previous';
+			next.id = 'current';
+			onDeck.id = 'next';
+		}, 1000);
 	};
 
 	return {
 		imageSources,
+		prohibitAbuse,
 		reverseSlide,
 		advanceSlide,
 	};
