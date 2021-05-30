@@ -23,24 +23,6 @@ const galleryViews = (() => {
 		}
 	})();
 
-	const renderButtonsContainer = (() => {
-		let div = document.createElement('div');
-		div.classList.add('container');
-		div.id = 'buttons-container';
-		gallery.appendChild(div);
-	})();
-
-	const renderButtons = (() => {
-		let buttonsContainer = document.querySelector('#buttons-container');
-		const renderReverseButton = (() => {
-			let button = document.createElement('button');
-			button.classList.add('slider-controller');
-			button.id = 'reverse-slider-button';
-			button.innerText = '<-';
-			buttonsContainer.appendChild(button);
-		})();
-	})();
-
 	return {};
 })();
 
