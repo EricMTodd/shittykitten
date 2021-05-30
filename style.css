@@ -35,11 +35,11 @@ body {
 	justify-content: center;
 	background: lightgray;
 	-webkit-text-stroke: 1px black;
-	font-size: 50vh;
+	font-size: 40vh;
 	color: white;
-	margin: 0 10vw 0 10vw;
-	height: 70vh;
-	width: 70vh;
+	margin: 0 150px 0 150px;
+	height: 650px;
+	width: 650px;
 }
 
 #slider-controllers-container {
@@ -63,4 +63,14 @@ body {
 	color: black;
 	background: white;
 	transition: 0.3s;
+}
+
+.advance {
+	transform: translateX(-950px);
+	transition-duration: 1s;
+}
+
+.reverse {
+	transform: translateX(950px);
+	transition-duration: 1s;
 }
