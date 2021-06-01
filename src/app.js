@@ -2,10 +2,14 @@ import { galleryViews } from '../src/views/galleryViews';
 import { galleryControllers } from '../src/controllers/galleryControllers';
 
 const app = (() => {
-	setInterval(() => {
+	const timer = setInterval(() => {
 		galleryControllers.prohibitAbuse();
 		galleryControllers.advanceSlide();
 	}, 6000);
 
-	return {};
+	return {
+		timer,
+	};
 })();
+
+export { app };

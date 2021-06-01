@@ -1,4 +1,5 @@
 import { galleryViews } from '../views/galleryViews';
+import { app } from '../app';
 
 const galleryControllers = (() => {
 	let slider = document.querySelector('#slider');
@@ -12,6 +13,7 @@ const galleryControllers = (() => {
 	})();
 
 	const prohibitAbuse = () => {
+		clearInterval(app.timer);
 		let buttons = document.querySelectorAll('.slider-controller');
 		for (let i = 0; i < buttons.length; i++) {
 			buttons[i].disabled = true;
@@ -31,6 +33,10 @@ const galleryControllers = (() => {
 		let slides = document.querySelectorAll('.slide');
 
 		prohibitAbuse();
+
+		app.timer = setInterval(() => {
+			advanceSlide();
+		}, 6000);
 
 		for (let i = 0; i < slides.length; i++) {
 			slides[i].classList.add('reverse');
@@ -70,6 +76,10 @@ const galleryControllers = (() => {
 		let slides = document.querySelectorAll('.slide');
 
 		prohibitAbuse();
+
+		app.timer = setInterval(() => {
+			advanceSlide();
+		}, 6000);
 
 		for (let i = 0; i < slides.length; i++) {
 			slides[i].classList.add('advance');
