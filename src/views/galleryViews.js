@@ -49,7 +49,7 @@ const galleryViews = (() => {
 		let div = document.createElement('div');
 		div.classList.add('container');
 		div.id = 'slider-controllers-container';
-		content.appendChild(div);
+		gallery.after(div);
 	})();
 
 	const renderButtons = (() => {

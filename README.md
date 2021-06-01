@@ -11,6 +11,8 @@
 
 ### TODO
 
-- Dynamically set the background image of the header based on the page. Multiple image libraries will be necessary.
-
-- Footer should always have socials.
+- Create timed and controllable gallery section (done)
+- Create about section
+- Create socials section
+- Create drop down menu
+- Create an algorithm that will write a file with all the image sources for more scalable access when adding images.

@@ -2,7 +2,6 @@ import { galleryViews } from '../views/galleryViews';
 import { app } from '../app';
 
 const galleryControllers = (() => {
-	let slider = document.querySelector('#slider');
 	let imageSources = [];
 
 	const createImageSourceList = (() => {

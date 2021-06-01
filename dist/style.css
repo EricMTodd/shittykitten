@@ -1,5 +1,6 @@
 * {
 	font-family: arial;
+	color: white;
 }
 
 body {
@@ -8,7 +9,16 @@ body {
 }
 
 #content {
-	overflow: hidden;
+	overflow: scroll;
+	height: 90vh;
+}
+
+#header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 10vh;
+	font-size: 50px;
 }
 
 #gallery {
@@ -16,7 +26,7 @@ body {
 	justify-content: center;
 	background: gray;
 	height: 80vh;
-	margin-top: 10vh;
+	/* margin-top: 10vh; */
 	margin-left: auto;
 	margin-right: auto;
 	overflow: hidden;
@@ -51,16 +61,17 @@ body {
 #slider-controllers-container {
 	display: flex;
 	justify-content: center;
-	margin-top: 10px;
+	align-items: center;
+	height: 10vh;
 }
 
 .slider-controller {
 	background: black;
-	color: white;
 	border: 2px solid white;
 	border-radius: 5px;
 	padding: 0 50px 0 50px;
 	margin: 0 15px 0 15px;
+	height: 5vh;
 	font-size: 30px;
 	transition: 0.3s;
 }
@@ -79,4 +90,19 @@ body {
 .reverse {
 	transform: translateX(950px);
 	transition-duration: 1s;
+}
+
+#about {
+	background: black;
+	padding: 0 50px 0 50px;
+	height: 100vh;
+}
+
+.about-alpha-container {
+	height: 25%;
+	border-bottom: 2px solid white;
+}
+
+#about-alpha-container-4 {
+	border-bottom: none;
 }
