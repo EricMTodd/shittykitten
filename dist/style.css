@@ -93,16 +93,25 @@ body {
 }
 
 #about {
-	background: black;
 	padding: 0 50px 0 50px;
 	height: 100vh;
+	font-size: 30px;
 }
 
 .about-alpha-container {
+	display: flex;
+	justify-content: center;
 	height: 25%;
 	border-bottom: 2px solid white;
 }
 
 #about-alpha-container-4 {
 	border-bottom: none;
+}
+
+#socials {
+	display: flex;
+	justify-content: center;
+	height: 100vh;
+	font-size: 30px;
 }
