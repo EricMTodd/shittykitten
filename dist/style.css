@@ -1,6 +1,15 @@
+@font-face {
+	font-family: slimWandals;
+	src: url(./fonts/SlimWandals_PERSONAL.ttf);
+}
+
 * {
-	font-family: arial;
+	font-family: slimWandals;
 	color: white;
+}
+
+*::-webkit-scrollbar {
+	display: none;
 }
 
 body {
@@ -9,7 +18,8 @@ body {
 }
 
 #content {
-	overflow: scroll;
+	overflow-x: hidden;
+	overflow-y: scroll;
 	height: 90vh;
 }
 
@@ -105,13 +115,75 @@ body {
 	border-bottom: 2px solid white;
 }
 
+#about-alpha-container-1 {
+	margin-top: 10px;
+}
+
 #about-alpha-container-4 {
 	border-bottom: none;
 }
 
 #socials {
+	height: 95vh;
+	font-size: 30px;
+	margin-top: 10px;
+}
+
+#socials-title-container {
 	display: flex;
 	justify-content: center;
-	height: 100vh;
-	font-size: 30px;
+	align-items: center;
+
+	margin-bottom: 10px;
+}
+
+#socials-links-container {
+	display: flex;
+	justify-content: center;
+	height: 150px;
+}
+
+#venmo-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: auto;
+	margin-bottom: auto;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	background: white;
+}
+
+#venmo-link img {
+	height: 50px;
+}
+
+#footer,
+#footer > * {
+	font-size: 20px;
+	color: gray;
+	font-family: arial;
+}
+
+#footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 5vh;
+}
+
+#footer a {
+	text-decoration: none;
+	margin-left: 5px;
+}
+
+#footer a:hover {
+	text-decoration: underline;
+}
+
+#footer span {
+	font-family: slimWandals;
+	color: red;
+	margin: 0 5px 0 7px;
 }
