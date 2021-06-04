@@ -31,6 +31,15 @@ body {
 	font-size: 50px;
 }
 
+#landing-page {
+	height: 80vh;
+	background: url(./images/markham-self-portrait.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	margin: 0 5vw 10vh 5vw;
+}
+
 #gallery {
 	display: flex;
 	justify-content: center;
@@ -124,17 +133,9 @@ body {
 }
 
 #socials {
-	height: 95vh;
+	height: 20vh;
 	font-size: 30px;
 	margin-top: 10px;
-}
-
-#socials-title-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	margin-bottom: 10px;
 }
 
 #socials-links-container {
@@ -143,20 +144,10 @@ body {
 	height: 150px;
 }
 
-#venmo-link {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+#instagram-link {
+	height: 125px;
 	margin-top: auto;
 	margin-bottom: auto;
-	height: 100px;
-	width: 100px;
-	border-radius: 50%;
-	background: white;
-}
-
-#venmo-link img {
-	height: 50px;
 }
 
 #footer,
